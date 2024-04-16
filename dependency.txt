@@ -1,0 +1,11 @@
+Xampp; port: 3307
+
+php : v8.3.6
+composer : v2.7.2
+laravel: v5.7.1
+
+// laravel installer global to latest version
+composer global require laravel/installer
+
+// laravel project creation
+laravel new todos
