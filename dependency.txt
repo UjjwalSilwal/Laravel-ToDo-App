@@ -2,10 +2,18 @@ Xampp; port: 3307
 
 php : v8.3.6
 composer : v2.7.2
-laravel: v5.7.1
+laravel: v5.7.2
+
+//php:
+php.ini : rename the ";extension = zip" to ";extension = php_zip.dll"
+php.ini : remove ";" from ( extension =filename && extension = php_zip.dll )
 
 // laravel installer global to latest version
 composer global require laravel/installer
 
 // laravel project creation
 laravel new todos
+
+//php server
+cd todos
+php artisan serve
