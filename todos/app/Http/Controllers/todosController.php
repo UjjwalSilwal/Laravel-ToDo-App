@@ -31,4 +31,10 @@ class todosController extends Controller
 
         return redirect(route("todo.home"));
     }
+
+    public function delete($id){
+        todos :: find($id)->delete();
+        return redirect(route("todo.home"));
+        
+    }
 }
