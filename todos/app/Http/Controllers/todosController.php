@@ -14,6 +14,7 @@ class todosController extends Controller
         return view("welcome")->with($data);
     }
 
+    // for storing it to database
     public function store(Request $request){
         $request->validate(
             [
@@ -31,10 +32,39 @@ class todosController extends Controller
 
         return redirect(route("todo.home"));
     }
-
+    
     public function delete($id){
         todos :: find($id)->delete();
         return redirect(route("todo.home"));
         
     }
+
+    public function edit($id){
+        $todo= todos:: find($id);
+        $data = compact('todo');
+        return view("update")->with($data);
+
+    }
+
+    public function updateData(Request $request){
+        $request->validate(
+            [
+                'name'=>'required',
+                'work'=>'required',
+                'dueDate'=>'required',
+            ]
+        );
+        $id=$request['id'];
+        
+        $todo =todos::find($id);
+        $todo->name=$request['name'];
+        $todo->work=$request['work'];
+        $todo->dueDate=$request['dueDate'];
+        $todo->save();
+
+        return redirect(route("todo.home"));
+
+    }
+
+    
 }
