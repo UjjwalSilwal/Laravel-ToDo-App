@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\todos;
 
 class todosController extends Controller
 {
@@ -14,6 +15,13 @@ class todosController extends Controller
                 'dueDate'=>'required',
             ]
         );
-        echo "validation complete!";
+        
+        $todo =new todos; //object created
+        $todo->name=$request['name'];
+        $todo->work=$request['work'];
+        $todo->dueDate=$request['dueDate'];
+        $todo->save();
+
+        return redirect(route("todo.home"));
     }
 }
