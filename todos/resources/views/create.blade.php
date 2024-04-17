@@ -11,14 +11,7 @@
         <a href="" class="btn btn-primary btn-lg">Add Todo</a>
     </div>
 
-    <table class="table table-stripped table-dark">
-        <tr>
-            <th>Name</th>
-            <th>Work</th>
-            <th>Due Date</th>
-            <th>Action</th>
-        </tr>
-    </table>
+   
 
 </div>
     
