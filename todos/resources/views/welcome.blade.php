@@ -19,14 +19,17 @@
             <th>Action</th>
         </tr>
 
+        @foreach ($todos as $todo)
         <tr valign="middle">
-            <td>Name</td>
-            <td>Work</td>
-            <td>Due Date</td>
+            <td>{{$todo->name}}</td>
+            <td>{{$todo->work}}</td>
+            <td>{{$todo->dueDate}}</td>
             <td>
                 <a href="" class="btn btn-danger btn-sm">Delete</a>
             </td>
         </tr>
+        @endforeach
+
     </table>
 
 </div>

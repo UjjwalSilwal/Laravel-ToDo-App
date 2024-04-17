@@ -7,6 +7,13 @@ use App\Models\todos;
 
 class todosController extends Controller
 {
+    // fetcing all the todos
+    public function index(){
+        $todos = todos :: all();
+        $data = compact('todos'); // compacting to arrays
+        return view("welcome")->with($data);
+    }
+
     public function store(Request $request){
         $request->validate(
             [

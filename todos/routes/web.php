@@ -5,9 +5,7 @@ use App\Http\Controllers\todosController;
 
 // resource/view/
 // for welcome.blade.php
-Route::get('/', function () {
-    return view('welcome');
-})->name("todo.home");
+Route::get('/', [todosController ::class, 'index'])->name("todo.home");
 
 // resource/view/layouts/
 // for create.blade.php
