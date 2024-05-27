@@ -26,3 +26,5 @@ php artisan make:controller todosController
 
 // making module and migration collections
 php artisan make:model todos --migration
+
+//to run project :: php artisan serve
